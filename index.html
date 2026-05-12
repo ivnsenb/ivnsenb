@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVN Son en Breugel - Natuur- en milieueducatie</title>
+    <meta name="description" content="IVN Son en Breugel is een afdeling van IVN Natuureducatie. Wij verbinden mensen met de natuur in Son en Breugel en omgeving.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-deep: #2d5016;
+            --green-mid: #4a7c28;
+            --green-light: #e8f0e0;
+            --green-pale: #f4f8ef;
+            --sand: #f5f0e8;
+            --bark: #5c4a32;
+            --text: #2a2a2a;
+            --text-light: #5a5a5a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 60%, #6a9e3a 100%);
+            color: var(--white);
+            padding: 3rem 1.5rem 3.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: rgba(255,255,255,0.15);
+            padding: 0.35rem 1rem;
+            border-radius: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .leaf-divider {
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 1.2rem;
+            color: var(--green-mid);
+            letter-spacing: 0.5em;
+        }
+
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 2rem 0;
+        }
+
+        .section h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section p {
+            color: var(--text-light);
+            font-size: 0.98rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-card {
+            background: var(--green-pale);
+            border-radius: 10px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card h3 {
+            font-family: 'Lora', serif;
+            font-size: 0.95rem;
+            color: var(--green-deep);
+            font-weight: 600;
+        }
+
+        .activities {
+            background: var(--sand);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .activities ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .activities li {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .activities li:last-child {
+            border-bottom: none;
+        }
+
+        .activities li::before {
+            content: '🌿';
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .cta-bar {
+            background: var(--green-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-bar p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-link {
+            display: inline-block;
+            background: var(--green-deep);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .cta-link:hover {
+            background: var(--green-mid);
+        }
+
+        footer {
+            background: var(--green-deep);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        footer strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        footer p {
+            margin-bottom: 0.4rem;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 520px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .values {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .value-card {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                text-align: left;
+            }
+
+            .value-icon {
+                margin-bottom: 0;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Afdeling Son en Breugel</div>
+            <h1>IVN Natuur&shy;educatie</h1>
+            <p>Wij verbinden mensen met de natuur in Son en Breugel en omgeving door educatie, excursies en vrijwilligerswerk.</p>
+        </div>
+    </header>
+
+    <div class="leaf-divider" aria-hidden="true">&#9753; &#9753; &#9753;</div>
+
+    <main>
+        <section class="section">
+            <h2>Wie zijn wij</h2>
+            <p>IVN Son en Breugel is een lokale afdeling van IVN Natuureducatie (Instituut voor Natuureducatie en Duurzaamheid). Onze vrijwilligers zetten zich in om bewoners te verbinden met de natuur in hun directe leefomgeving.</p>
+            <p>We organiseren activiteiten voor alle leeftijden: van natuurwandelingen en vogelexcursies tot educatieve programma's op scholen en lezingen over biodiversiteit.</p>
+        </section>
+
+        <section class="section">
+            <h2>Onze kernwaarden</h2>
+            <div class="values">
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Verbinding</h3>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💚</div>
+                    <h3>Vertrouwen</h3>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✨</div>
+                    <h3>Verwondering</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Wat doen wij</h2>
+            <div class="activities">
+                <ul>
+                    <li>Natuurwandelingen en excursies in Son en Breugel en omgeving</li>
+                    <li>Vogelwerkgroep met monitoring en inventarisaties</li>
+                    <li>Natuur- en milieueducatie op basisscholen</li>
+                    <li>Lezingen en thema-avonden over natuur en duurzaamheid</li>
+                    <li>Onderhoud en beheer van natuurgebieden</li>
+                    <li>Samenwerking met gemeente en lokale organisaties</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="cta-bar">
+            <p>Meer weten over onze activiteiten of lid worden?</p>
+            <a href="https://www.ivn.nl/afdeling/son-en-breugel" class="cta-link">Bekijk onze afdelingspagina</a>
+        </div>
+
+        <section class="section">
+            <h2>Onderdeel van IVN Natuureducatie</h2>
+            <p>IVN Natuureducatie is een landelijke vereniging met meer dan 160 afdelingen door heel Nederland. Samen bereiken we jaarlijks honderdduizenden mensen met activiteiten die de verbinding tussen mens en natuur versterken.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>IVN Natuur&shy;educatie, afdeling Son en Breugel</strong></p>
+        <p>Onderdeel van IVN, Instituut voor Natuureducatie en Duurzaamheid</p>
+        <p style="margin-top: 0.8rem;">
+            <a href="mailto:info@ivnsenb.nl">info@ivnsenb.nl</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.6;">Domein ivnsenb.nl wordt beheerd door IVN Son en Breugel</p>
+    </footer>
+</body>
+</html>
